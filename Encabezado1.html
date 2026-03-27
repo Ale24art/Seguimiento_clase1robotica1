@@ -1,0 +1,183 @@
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════════════════════════════════
+   PLANTILLA: LABORATORIO DE PREPARACIÓN DOCENTE
+   Compatible con Moodle — todo bajo .lab-doc
+   ═══════════════════════════════════════════════════ */
+
+.lab-doc {
+  font-family: 'Nunito', sans-serif;
+  color: #2d3436;
+  width: 100%;
+  padding: 8px 0 8px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+.lab-doc * { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ═══════════════════════════════
+   HEADER PRINCIPAL
+   ═══════════════════════════════ */
+.lab-doc .lab-header {
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 40%, #388e3c 70%, #43a047 100%);
+  border-radius: 24px;
+  padding: 0;
+  margin-bottom: 6px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  cursor: default;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.lab-doc .lab-header:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.18);
+}
+
+/* Decorative dots pattern */
+.lab-doc .lab-header-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+.lab-doc .lab-header-inner {
+  position: relative;
+  z-index: 2;
+  padding: 28px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Logo zone */
+.lab-doc .lab-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.lab-doc .lab-logo-wrap img {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(0,0,0,0.28)) brightness(1.05);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.lab-doc .lab-header:hover .lab-logo-wrap img {
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.35)) brightness(1.1);
+}
+
+.lab-doc .lab-badge-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.lab-doc .lab-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.32);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 30px;
+  backdrop-filter: blur(4px);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.lab-doc .lab-header:hover .lab-badge {
+  background: rgba(255,255,255,0.22);
+  border-color: rgba(255,255,255,0.45);
+}
+.lab-doc .lab-badge-dot {
+  width: 7px; height: 7px;
+  background: #a5d6a7;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.lab-doc .lab-main-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.3s ease;
+  text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+.lab-doc .lab-header:hover .lab-main-title {
+  transform: scale(1.012);
+}
+.lab-doc .lab-main-title-icon {
+  width: 48px; height: 48px;
+  background: rgba(255,255,255,0.18);
+  border-radius: 14px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  border: 1px solid rgba(255,255,255,0.28);
+  backdrop-filter: blur(6px);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.lab-doc .lab-header:hover .lab-main-title-icon {
+  background: rgba(255,255,255,0.26);
+  transform: rotate(10deg) scale(1.1);
+}
+.lab-doc .lab-main-subtitle {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.75);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: color 0.3s ease;
+}
+.lab-doc .lab-header:hover .lab-main-subtitle {
+  color: rgba(255,255,255,0.92);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .lab-doc .lab-header-inner { grid-template-columns: 1fr; padding: 24px 20px; }
+  .lab-doc .lab-logo-wrap { justify-content: flex-start; }
+  .lab-doc .lab-logo-wrap img { height: 52px; }
+  .lab-doc .lab-main-title { font-size: 1.5rem; }
+}
+</style>
+
+<div class="lab-doc">
+
+  <!-- HEADER PRINCIPAL -->
+  <div class="lab-header">
+    <div class="lab-header-bg"></div>
+
+    <div class="lab-header-inner">
+      <div>
+        <div class="lab-badge-row">
+          <div class="lab-badge">
+            <span class="lab-badge-dot"></span>
+            Módulo de Programación
+          </div>
+        </div>
+        <h1 class="lab-main-title">
+          Laboratorio de preparación docente
+        </h1>
+        <p class="lab-main-subtitle">Robótica I: Programación con Micro:bit</p>
+      </div>
+      <div class="lab-logo-wrap">
+      
+    </div>
+  </div>
+
+
+</div><!-- fin .lab-doc -->
